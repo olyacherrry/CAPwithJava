@@ -41,6 +41,10 @@
 			<groupId>com.sap.cds</groupId>
 			<artifactId>cds-starter-cloudfoundry</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>com.sap.cds</groupId>
+            <artifactId>cds-feature-cloudfoundry</artifactId>
+        </dependency>
 	</dependencies>
 
 	<build>

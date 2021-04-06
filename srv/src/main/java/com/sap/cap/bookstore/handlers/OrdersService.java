@@ -58,14 +58,14 @@ public class OrdersService implements EventHandler {
       }
   }
 
-  @Before(event = CdsService.EVENT_CREATE, entity = "OrdersService.Orders")
-  public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
-      for (Orders order : orders) {
-          if (order.getItems() != null) {
-              validateBookAndDecreaseStock(order.getItems());
-          }
-      }
-  }
+    @Before(event = CdsService.EVENT_CREATE, entity = "OrdersService.Orders")
+    public void validateBookAndDecreaseStockViaOrders(List<Orders> orders) {
+        for (Orders order : orders) {
+            if (order.getItems() != null) {
+                validateBookAndDecreaseStock(order.getItems());
+            }
+        }
+    }
 
     @After(event = { CdsService.EVENT_READ, CdsService.EVENT_CREATE }, entity = "OrdersService.OrderItems")
     public void calculateNetAmount(List<OrderItems> items) {
